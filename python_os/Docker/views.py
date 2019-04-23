@@ -17,7 +17,7 @@ def installation(request):
         print request.POST.get("installation")
         #return HttpResponse (request.POST.get("installation"))
         if request.method == 'POST':
-            print "register in post"
+            print "register in postt"
             #form = SignupForm(request.POST or None)
             #if form.is_valid():
             #password = form.cleaned_data['password']
@@ -26,8 +26,10 @@ def installation(request):
             #print password
             if (installation == 'Docker'):
                 os.system('yum install docker')
+                return HttpResponse (request.POST.get("installation"))
             elif (installation == 'spark'):
-                os.system('mkdir spark')
+                os.system('mkdir sparkk')
+                return HttpResponse (request.POST.get("installation"))
             else:
                 print "error"
             
